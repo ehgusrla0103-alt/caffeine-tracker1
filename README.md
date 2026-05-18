@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+<html lang="ko">
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -5,6 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
+  /* 기본 색상 팔레트 및 폰트 설정은 원본 유지 */
   :root {
     --bg: #0F0F0F;
     --surface: #181818;
@@ -25,8 +28,13 @@
     --danger-border: rgba(232,87,74,0.30);
     --accent: #C8A96E;
   }
+
   * { box-sizing: border-box; margin: 0; padding: 0; }
   html { font-size: 15px; }
+  /* 1) 파란 글씨 제거를 위한 기본 링크 스타일 재정의 */
+  a { color: inherit; text-decoration: none; }
+  a:visited { color: inherit; }
+
   body {
     background: var(--bg);
     color: var(--text);
@@ -56,13 +64,17 @@
     letter-spacing: 0.02em;
   }
 
-  /* ── LAYOUT ── */
-  .container { max-width: 480px; margin: 0 auto; padding: 0 1rem; }
+  /* ── LAYOUT 공통 ── */
+  .container { max-width: 860px; margin: 0 auto; padding: 0 1.5rem; }
   .main-grid {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 340px;
     gap: 1.5rem;
     margin-top: 1.5rem;
+    align-items: start;
+  }
+  @media (max-width: 900px) {
+    .main-grid { grid-template-columns: 1fr; }
   }
 
   /* ── SECTION LABELS ── */
@@ -299,6 +311,10 @@
     font-size: 0.8rem; color: var(--text3);
     padding: 0.75rem 0;
   }
+
+  /* 2) 비율 고정을 위한 컨테이너 너비 제한 추가(필요시 제거 가능) */
+  /* 이미 .container의 max-width를 860px로 설정해 두었고, .main-grid로 양쪽 비율을 관리합니다. */
+
 </style>
 </head>
 <body>
@@ -491,7 +507,7 @@ const TIPS = {
    STATE
 ================================================================ */
 let activeBrandId = null;
-let log = []; // { brandName, menuName, mg, qty }
+let log = []; // { key, brandName, menuName, mg, qty }
 
 /* ================================================================
    RENDER BRANDS
