@@ -1,5 +1,3 @@
-<!DOCTYPE html>
-<html lang="ko">
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -59,16 +57,12 @@
   }
 
   /* ── LAYOUT ── */
-  .container { max-width: 760px; margin: 0 auto; padding: 0 1rem; }
+  .container { max-width: 480px; margin: 0 auto; padding: 0 1rem; }
   .main-grid {
     display: grid;
-    grid-template-columns: 1fr 260px;
+    grid-template-columns: 1fr;
     gap: 1.5rem;
     margin-top: 1.5rem;
-    align-items: start;
-  }
-  @media (max-width: 680px) {
-    .main-grid { grid-template-columns: 1fr; }
   }
 
   /* ── SECTION LABELS ── */
