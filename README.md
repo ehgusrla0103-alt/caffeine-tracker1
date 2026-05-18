@@ -1,6 +1,3 @@
-[caffeine_tracker_v2.html](https://github.com/user-attachments/files/27962336/caffeine_tracker_v2.html)
-# caffeine-tracker1
-caffeine-tracker1
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -62,10 +59,10 @@ caffeine-tracker1
   }
 
   /* ── LAYOUT ── */
-  .container { max-width: 820px; margin: 0 auto; padding: 0 1.5rem; }
+  .container { max-width: 760px; margin: 0 auto; padding: 0 1rem; }
   .main-grid {
     display: grid;
-    grid-template-columns: 1fr 340px;
+    grid-template-columns: 1fr 260px;
     gap: 1.5rem;
     margin-top: 1.5rem;
     align-items: start;
